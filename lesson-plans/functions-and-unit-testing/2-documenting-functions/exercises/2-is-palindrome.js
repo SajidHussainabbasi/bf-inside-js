@@ -3,10 +3,10 @@
 console.log('-- begin --');
 
 /**
- * _
- *
- * @_ {_} _ - _
- * @_ {_}  _
+ * 
+ *check the string is palindrome or not plaindrome
+ * @param {any} use for loop to reversed and then compare with param string
+ * @Return{true or false}  string is palindrome or not palindrome
  */
 const isPalindrome = (toCheck) => {
   let reversed = '';

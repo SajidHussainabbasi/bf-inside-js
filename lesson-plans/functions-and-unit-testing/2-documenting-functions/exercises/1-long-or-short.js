@@ -3,11 +3,11 @@
 console.log('-- begin --');
 
 /**
- * _
+ * Check the long and short 
  *
- * @_ {_} _ - _
- * @_ {_} _ - _
- * @_ {_} _
+ * @_ param{text,cutoff} _ - _
+ * @_condition{text} short - long
+ * @_Return{value} 
  */
 const longOrShort = (text, cutoff) => {
   if (text.length < cutoff) {

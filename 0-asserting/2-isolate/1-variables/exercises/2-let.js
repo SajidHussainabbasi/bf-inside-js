@@ -1,5 +1,3 @@
-// #todo
-
 'use strict';
 
 console.log('-- begin --');
@@ -13,13 +11,11 @@ let fruit = 'banana';
 let desert = 'cake';
 let topping = 'frosting';
 
-_;
-console.log(desert); // should log 'chocolate cake'
+let chocolate = 'chocolate ';
+console.log(chocolate + desert); // should log 'chocolate cake'
 
-_;
-console.log(desert); // should log 'chocolate cake with frosting'
+console.log(chocolate + desert + ' with ' + topping); // should log 'chocolate cake with frosting'
 
-_;
-console.log(desert); // should log 'chocolate cake with frosting and banana'
+console.log(chocolate + desert + ' with ' + topping + ' and ' + fruit); // should log 'chocolate cake with frosting and banana'
 
 console.log('-- end --');
