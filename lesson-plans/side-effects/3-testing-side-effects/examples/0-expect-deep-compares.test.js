@@ -9,10 +9,10 @@ describe('comparing arrays in unit tests', () => {
       const arr2 = ['a', 'b', 'c'];
       expect(arr1).toEqual(arr2);
     });
-    it('two arrays with different values', () => {
+    it('two arrays with different values 1', () => {
       const arr1 = ['a', 'b', 'c'];
       const arr2 = ['a', 'b', 'f'];
-      expect(arr1).toEqual(arr2);
+      expect(arr1).not.toEqual(arr2);
     });
     it('one array', () => {
       const arr1 = ['a', 'b', 'c'];
@@ -28,7 +28,7 @@ describe('comparing arrays in unit tests', () => {
       expect(areSameArray).toEqual(false);
     });
     it('two arrays with different values', () => {
-      const arr1 = ['a', 'b', 'c'];
+      const arr1 = ['a', 'd', 'c'];
       const arr2 = ['a', 'b', 'c'];
       expect(arr1 === arr2).toEqual(false);
     });

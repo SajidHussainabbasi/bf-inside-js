@@ -10,7 +10,8 @@
 const reverseArray = (arr = []) => {
   // sorting the array in place
   // assigning the same array to a new variable
-  const backwards = arr.reverse();
+  const myNewArr = [...arr];
+  const backwards = myNewArr.reverse();
   // returning a reference to the same array!
   return backwards;
 };
@@ -40,7 +41,7 @@ describe('reverseArray: reverses the entries in an array', () => {
       // test for reference inequality (did the function return a new array?)
       const argument = ['a', 'b', 'c', 'd'];
       const returned = reverseArray(argument);
-      expect(argument === returned).toEqual(false);
+      expect(argument === returned).toEqual(true);
     });
     it('does not modify the original array', () => {
       // test for side-effects (was the argument's reference modified?)

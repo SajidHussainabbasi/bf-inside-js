@@ -17,32 +17,14 @@ const reverseWordOrPhrase = () => {
   let reversed = '';
   if (reverseType === 'each') {
     const splitText = userText.split(' ');
-    const newWords = [];
 
-    for (const word of splitText) {
-      /// BEGIN: refactor this to call `reverse`
-      // const reversedWord = reverse(__);
-
-      let reversedWord = '';
-      for (const char of word) {
-        reversedWord = char + reversedWord;
-      }
-      /// END: refactor
-
-      newWords.push(reversedWord);
-    }
+    // Refactored: Call `reverse` for each word
+    const newWords = splitText.map(word => reverse(word));
 
     reversed = newWords.join(' ');
   } else {
-    /// BEGIN: refactor this to call `reverse`
-    // reversed = reverse(__);
-
-    let reversedText = '';
-    for (const char of userText) {
-      reversedText = char + reversedText;
-    }
-    reversed = reversedText;
-    /// END: refactor
+    // Refactored: Call `reverse` for the entire text
+    reversed = reverse(userText);
   }
 
   // --- display the reversed input ---
