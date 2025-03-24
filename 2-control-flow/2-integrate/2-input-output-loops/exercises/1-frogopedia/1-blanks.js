@@ -1,28 +1,27 @@
-// #todo
-
 'use strict';
 
 let userInput = '';
-let inputIsAboutFrogs = _;
+let inputIsAboutFrogs = false;
+
 while (!inputIsAboutFrogs) {
-  userInput = prompt('tell me something about frogs');
+  userInput = prompt('Tell me something about frogs');
   console.log('userInput:', typeof userInput, userInput);
 
-  // check if the user entered nothing, or clicked cancel
-  if (_) {
-    alert('that is not something');
+  // check if the user entered nothing or clicked cancel
+  if (userInput === null || userInput === '') {
+    alert('That is not something.');
     continue;
   }
 
-  // search the user input for "frog", upper or lower case
-  if (_) {
-    inputIsAboutFrogs = _;
+  // search the user input for "frog", case insensitive
+  if (/frog/i.test(userInput)) {
+    inputIsAboutFrogs = true;
     continue;
   }
 
-  alert('nope, not about frogs.  try again.');
+  alert('Nope, not about frogs. Try again.');
 }
 
 const finalMessage =
-  'i just learned something cool about frogs!\n\n- "' + userInput + '"';
+  'I just learned something cool about frogs!\n\n- "' + userInput + '"';
 alert(finalMessage);

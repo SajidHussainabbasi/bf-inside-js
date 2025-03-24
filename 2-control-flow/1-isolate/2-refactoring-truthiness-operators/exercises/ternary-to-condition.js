@@ -1,5 +1,3 @@
-// #todo
-
 'use strict';
 
 console.log('-- begin --');
@@ -7,10 +5,12 @@ console.log('-- begin --');
 // refactor this code to use a conditional instead of a ternary
 
 // try different values and different types
-const isVegetarian = _;
+const isVegetarian = true;
+let favoriteFood;
 console.log(isVegetarian);
-
-const favoriteFood = isVegetarian ? 'beans' : 'bacon';
+if (isVegetarian) {
+  favoriteFood = 'beans';
+} else favoriteFood = 'bacon';
 console.log(favoriteFood);
 
 console.log('-- end --');

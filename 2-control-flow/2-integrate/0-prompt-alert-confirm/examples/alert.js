@@ -1,5 +1,3 @@
-// #todo
-
 'use strict';
 
 // alert displays whatever you pass as an argument

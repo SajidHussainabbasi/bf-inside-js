@@ -1,9 +1,9 @@
 'use strict';
 
 // experiment with different values
-const a = _;
-const b = _;
-const c = _;
+const a = 10;
+const b = 20;
+const c = 30;
 
 // ternary expression
 const ternaryValue = a ? b : c;

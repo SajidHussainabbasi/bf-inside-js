@@ -1,5 +1,3 @@
-// #todo
-
 'use strict';
 
 /* look out for:
@@ -11,19 +9,21 @@
 
 */
 
-const userNumber = NaN;
-while (Number.isNaN(userNumber)) {
-  const userInput = prompt('enter a number');
+let userNumber = NaN; // Changed 'const' to 'let' to allow reassignment
 
-  if (userInput === '' && userInput === null) {
-    alert('enter something!');
-    break;
+while (Number.isNaN(userNumber)) {
+  const userInput = prompt('Enter a number');
+
+  if (userInput === '' || userInput === null) {
+    // Fixed logical condition
+    alert('Enter something!');
+    continue; // Changed 'break' to 'continue' so the loop keeps asking
   }
 
-  userNumber = NaN(userInput);
+  userNumber = Number(userInput); // Fixed incorrect casting to a number
 
   if (Number.isNaN(userNumber)) {
-    alert('"', userInput, '" is not a number');
+    alert('"' + userInput + '" is not a number'); // Fixed alert message syntax
   }
 }
 

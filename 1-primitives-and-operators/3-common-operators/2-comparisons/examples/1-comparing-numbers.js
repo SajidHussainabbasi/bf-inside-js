@@ -1,5 +1,3 @@
-// #todo
-
 'use strict';
 
 console.log('-- begin --');
@@ -18,7 +16,7 @@ console.log('-- begin --');
 
 */
 
-const fiveIsGreaterThanFour = 5 > 4;
+const fiveIsGreaterThanFour = 5 && 4;
 console.log(typeof fiveIsGreaterThanFour, fiveIsGreaterThanFour);
 
 const oneIsGreaterThanOrEqualToPointFive = 1 >= 0.5;

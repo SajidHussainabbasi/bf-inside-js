@@ -1,5 +1,3 @@
-// #todo
-
 'use strict';
 
 console.log('-- begin --');
@@ -16,6 +14,6 @@ if (value1 && !value2) {
   path = 'else if';
 }
 
-console.assert(path === _);
+console.assert(path === 'if');
 
 console.log('-- end --');

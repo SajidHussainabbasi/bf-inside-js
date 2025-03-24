@@ -1,23 +1,15 @@
-// #todo
-
 'use strict';
 
 console.log('-- begin --');
 
-// refactor this code to use a _?_:_ instead of a conditional
-
 // try different values and different types
-const isLoggedIn = _;
-const secretInformation = _;
-const warningMessage = _;
+const isLoggedIn = true;
+const secretInformation = 'Classified Data';
+const warningMessage = 'Access Denied';
 console.log(isLoggedIn, secretInformation, warningMessage);
 
-let toDisplay;
-if (isLoggedIn) {
-  toDisplay = secretInformation;
-} else {
-  toDisplay = warningMessage;
-}
+// Refactored to use ternary operator
+const toDisplay = isLoggedIn ? secretInformation : warningMessage;
 console.log(toDisplay);
 
 console.log('-- end --');

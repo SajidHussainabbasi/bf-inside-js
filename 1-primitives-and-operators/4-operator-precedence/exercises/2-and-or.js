@@ -12,51 +12,51 @@
 
 // --- booleans ---
 
-const a = true || (false && true);
-console.assert(a === __, 'a');
+const a = true || (false && true); // true || false = true
+console.assert(a === true, 'a');
 
-const b = (true || false) && true;
-console.assert(b === __, 'b');
+const b = (true || false) && true; // true && true = true
+console.assert(b === true, 'b');
 
-const c = true && (false || false) && true;
-console.assert(c === __, 'c');
+const c = true && (false || false) && true; // true && false && true = false
+console.assert(c === false, 'c');
 
-const d = true || (false && false) || true;
-console.assert(d === __, 'd');
+const d = true || (false && false) || true; // true || false || true = true
+console.assert(d === true, 'd');
 
-const e = (true || false) && (false || true);
-console.assert(e === __, 'e');
+const e = (true || false) && (false || true); // true && true = true
+console.assert(e === true, 'e');
 
 // --- numbers ---
 
-const f = 1 || (0 && 2);
-console.assert(f === __, 'f');
+const f = 1 || (0 && 2); // 1 || (0) = 1
+console.assert(f === 1, 'f');
 
-const g = (1 || 0) && 2;
-console.assert(g === __, 'g');
+const g = (1 || 0) && 2; // 1 && 2 = 2
+console.assert(g === 2, 'g');
 
-const h = 1 && (0 || 0) && 2;
-console.assert(h === __, 'h');
+const h = 1 && (0 || 0) && 2; // 1 && 0 && 2 = 0
+console.assert(h === 0, 'h');
 
-const i = 1 || (0 && 0) || 2;
-console.assert(i === __, 'i');
+const i = 1 || (0 && 0) || 2; // 1 || 0 || 2 = 1
+console.assert(i === 1, 'i');
 
-const j = (1 || 0) && (0 || 2);
-console.assert(j === __, 'j');
+const j = (1 || 0) && (0 || 2); // 1 && 2 = 2
+console.assert(j === 2, 'j');
 
 // --- strings ---
 
-const k = 'hi' || ('' && 'bye');
-console.assert(k === __, 'k');
+const k = 'hi' || ('' && 'bye'); // 'hi' || '' = 'hi'
+console.assert(k === 'hi', 'k');
 
-const l = ('hi' || '') && 'bye';
-console.assert(l === __, 'l');
+const l = ('hi' || '') && 'bye'; // 'hi' && 'bye' = 'bye'
+console.assert(l === 'bye', 'l');
 
-const m = 'hi' && ('' || '') && 'bye';
-console.assert(m === __, 'm');
+const m = 'hi' && ('' || '') && 'bye'; // 'hi' && '' && 'bye' = ''
+console.assert(m === '', 'm');
 
-const n = 'hi' || ('' && '') || 'bye';
-console.assert(n === __, 'n');
+const n = 'hi' || ('' && '') || 'bye'; // 'hi' || '' || 'bye' = 'hi'
+console.assert(n === 'hi', 'n');
 
-const o = ('hi' || '') && ('' || 'bye');
-console.assert(o === __, 'o');
+const o = ('hi' || '') && ('' || 'bye'); // 'hi' && 'bye' = 'bye'
+console.assert(o === 'bye', 'o');

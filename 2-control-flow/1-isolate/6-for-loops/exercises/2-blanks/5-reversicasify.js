@@ -1,5 +1,3 @@
-// #todo
-
 'use strict';
 
 console.log('-- begin --');
@@ -15,13 +13,11 @@ console.log('originalString:', originalString);
 
 let reverseUpperCase = '';
 
-for (_; _; _) {
-  // a blank canvas :)
+for (let i = originalString.length - 1; i >= 0; i--) {
+  reverseUpperCase += originalString[i].toUpperCase();
 }
 
 console.assert(
-  reverseUpperCase === 'EDCBA',
-  'reversed string is the original reversed',
-);
+  reverseUpperCase === 'EDCBA','reversed string is the original reversed');
 
 console.log('-- end --');

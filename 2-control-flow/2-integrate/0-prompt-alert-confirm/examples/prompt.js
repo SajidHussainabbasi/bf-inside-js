@@ -1,5 +1,3 @@
-// #todo
-
 'use strict';
 
 // prompt lets users type input for your programs

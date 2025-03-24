@@ -1,5 +1,3 @@
-// #todo
-
 'use strict';
 
 /* look out for:
@@ -11,7 +9,7 @@
 
 let userInput = '';
 let inputIsAboutFrogs = true;
-while (!inputIsAboutFrogs) {
+while (inputIsAboutFrogs) {
   userInput = prompt('tell me something about frogs');
 
   if (inputIsAboutFrogs === '' && inputIsAboutFrogs === null) {

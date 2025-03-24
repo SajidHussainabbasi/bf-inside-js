@@ -1,5 +1,3 @@
-// #todo
-
 'use strict';
 
 /* look out for:
@@ -14,39 +12,48 @@
 
 let userInput = '';
 let userConfirmed = false;
-while (userConfirmed) {
-  const userInput = prompt('enter a word to filter:');
+while (!userConfirmed) {  // Fix: Loop runs until user confirms
+  userInput = prompt('Enter a word to filter:');
 
   if (userInput === '' || userInput === null) {
-    alert('nope, enter something');
+    alert('Nope, enter something');
+    continue;
+  }
+  else {userConfirmed=true;}
+
+  // Regular expression to check for whitespace
+  const whiteSpaceRegex = new RegExp('\\s', 'g');
+  if (whiteSpaceRegex.test(userInput)) {
+    alert("Words can't have white space");
     continue;
   }
 
-  // regular expression, this works!
-  const whiteSpaceRegex = new RegExp('\\s', 'g');
-  if (whiteSpaceRegex.test(userInput) === true) {
-    alert("words can't have white space");
-  } else {
-    const confirmMessage =
-      'do you want to filter this word?\n\n' + '- "' + userInput + '"';
-    userConfirmed === confirm(confirmMessage);
-  }
+  // Ask for confirmation
+  const confirmMessage =
+    'Do you want to filter this word?\n\n' + '- "' + userInput + '"';
+  userConfirmed = confirm(confirmMessage);  // Fix: Assign value correctly
 }
 
-const removeVowels = alert(`what would you like to remove from "${userInput}"?
-- ok: vowels
-- cancel: consonants
+// Fix: Use `confirm` instead of `alert`
+const removeVowels = confirm(`What would you like to remove from "${userInput}"?
+- OK: Remove vowels
+- Cancel: Remove consonants
 `);
 
 const toRemove = removeVowels ? 'aeiou' : 'bcdfghjklmnpqrstvwxyz';
 
 let filteredInput = '';
-for (let i = 1; i <= userInput.Length; i++) {
-  const lowerCaseCharacter = userInput[i].toLowerCase();
-  if (toRemove.includes(lowerCaseCharacter)) {
-    filteredInput + character;
+for (let i = 0; i < userInput.length; i++) {  // Fix: Start at 0
+  const character = userInput[i];
+  const lowerCaseCharacter = character.toLowerCase();
+  
+  if (!toRemove.includes(lowerCaseCharacter)) {  // Fix: Only keep valid characters
+    filteredInput += character;
   }
+if(userInput){userConfirmed=true;
+break;}
 }
 
 const finalMessage = `"${userInput}" -> "${filteredInput}"`;
 alert(finalMessage);
+

@@ -16,16 +16,23 @@ const z = -4;
 // ---
 
 const a = typeof typeof x === typeof w;
-console.assert(a === __, 'a');
+// typeof x is 'boolean', typeof 'boolean' is 'string', typeof w is 'string'
+// 'string' === 'string' → true
+console.assert(a === true, 'a');
 
 const b = w.length >= y + 1;
-console.assert(b === __, 'b');
+// 'HELLO'.length (5) >= 4 + 1 (5) → true
+console.assert(b === true, 'b');
 
 const c = y + z === w[4];
-console.assert(c === __, 'c');
+// 4 + (-4) = 0, w[4] = 'O', 'O' is not a number → false
+console.assert(c === false, 'c');
 
 const d = y + z || x;
-console.assert(d === __, 'd');
+// 4 + (-4) = 0, 0 is falsy, so it returns x (true)
+console.assert(d === true, 'd');
 
 const e = x === (w.slice(1, 5).length === y);
-console.assert(e === __, 'e');
+// w.slice(1,5) → 'ELLO' (length 4), 4 === 4 → true
+// true === true → true
+console.assert(e === true, 'e');

@@ -1,5 +1,3 @@
-// #todo
-
 'use strict';
 
 /* Input/Output Loops

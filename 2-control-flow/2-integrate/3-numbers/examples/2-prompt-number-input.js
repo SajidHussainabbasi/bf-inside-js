@@ -1,5 +1,3 @@
-// #todo
-
 'use strict';
 
 /* Prompting for Numbers

@@ -1,5 +1,3 @@
-// #todo
-
 'use strict';
 
 console.log('-- begin --');
@@ -26,18 +24,17 @@ const padding = '.:.';
 let paddedString = 'hi';
 
 // boolean flag variable
-let isLongEnough = false;
-while (_) {
-  paddedString = _;
+let isLongEnough =true;
+while (isLongEnough) {
+  paddedString += padding;
   console.log(paddedString);
-  if (_) {
-    _;
+  if (paddedString.length ==longEnough) {
+    isLongEnough=false;
   }
 }
 
 console.assert(
   paddedString === 'hi.:..:..:..:.',
-  '"hi" should have 12 padding characters',
-);
+  '"hi" should have 12 padding characters');
 
 console.log('-- end --');

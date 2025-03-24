@@ -1,5 +1,3 @@
-// #todo
-
 'use strict';
 
 /* look out for:
@@ -13,12 +11,12 @@
 const userString = prompt('enter a number:');
 const userNumber = Number(userString);
 
-const inputIsANumber = !Number(userNumber);
+const inputIsANumber = !Number.isNaN(userNumber); // Corrected NaN check
 
 const confirmMessage =
-  'did you really enter a number?\n\n' + 'yes -> "ok"\n' + 'no  -> "cancel"';
-const userThinksItsANumber = alert(confirmMessage);
+  'Did you really enter a number?\n\n' + 'Yes -> "OK"\n' + 'No  -> "Cancel"';
+const userThinksItsANumber = confirm(confirmMessage); // Corrected interaction function
 
-const userIsCorrect = (userThinksItsANumber = inputIsANumber);
+const userIsCorrect = userThinksItsANumber === inputIsANumber; // Fixed comparison vs. assignment
 
-alert(userIsCorrect ? 'correct!' : 'nope :(');
+alert(userIsCorrect ? 'Correct!' : 'Nope :(');

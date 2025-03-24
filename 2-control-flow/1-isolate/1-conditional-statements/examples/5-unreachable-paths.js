@@ -1,4 +1,3 @@
-// #todo
 
 'use strict';
 
@@ -20,13 +19,13 @@ console.log('-- begin --');
 
 */
 
-const value = 123;
+//const value = 123;
 // const value = '123';
 // const value = true;
 // const value = undefined;
 // const value = null;
-// const value = 'hello';
-// const value = NaN;
+ const value = 'hello';
+//const value = NaN;
 
 // unreachable because the condition is impossible
 //  it's impossible for a value to be truthy AND falsy

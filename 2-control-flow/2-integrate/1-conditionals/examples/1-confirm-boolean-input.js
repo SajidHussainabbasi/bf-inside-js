@@ -1,5 +1,3 @@
-// #todo
-
 'use strict';
 
 /* Confirming with Boolean Input
@@ -12,8 +10,7 @@
 const favoriteColorInput = prompt('please enter your favorite color');
 
 const confirmedFavoriteColor = confirm(
-  'are you sure "' + favoriteColorInput + '" is your favorite color?',
-);
+  'are you sure "' + favoriteColorInput + '" is your favorite color?');
 
 if (confirmedFavoriteColor) {
   alert('nice.  your favorite color is "' + favoriteColorInput + '"');

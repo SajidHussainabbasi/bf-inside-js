@@ -26,3 +26,4 @@ const lastName = 'Pierre';
 const fullName = firstName + ' ' + lastName;
 
 console.assert(fullName === 'Brobes Pierre');
+console.log(fullName === 'Brobes Pierre');

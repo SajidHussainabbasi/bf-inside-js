@@ -1,5 +1,3 @@
-// #todo
-
 'use strict';
 
 /* Fill in the Blanks
@@ -13,27 +11,28 @@
 */
 
 // get user input as a String
-const userString = _('enter a number:');
+const userString = prompt('enter a number:'); // Prompt user for input
+
 // coerce it to a Number
-const userNumber = _(userString);
+const userNumber = Number(userString); // Convert input to a number
 
 // is the number NaN or not?
 // see: isolate/05-explicit-coercion/examples/4-about-nan.js
-const inputIsANumber = !_._(userNumber);
+const inputIsANumber = !Number.isNaN(userNumber); // Check if input is a valid number
 
 // does the user think their String becomes a Number?
 const confirmMessage =
   'did you really enter a number?\n\n' + 'yes -> "ok"\n' + 'no  -> "cancel"';
-const userThinksItsANumber = _(confirmMessage);
+const userThinksItsANumber = confirm(confirmMessage); // Ask the user if they think it was a number
 
 // compare userThinksItsANumber and inputIsANumber
 // does the user think the same thing as JavaScript?
 // see: isolate/04-comparing-and-assertion/examples/1-strict-equality.js
-const userIsCorrect = _;
+const userIsCorrect = userThinksItsANumber === inputIsANumber; // Compare JavaScript's evaluation with user belief
 
 // which variable "knows" if the user was correct?
-if (_) {
-  _('correct!');
+if (userIsCorrect) {
+  alert('correct!'); // If the user's assumption was correct, alert "correct!"
 } else {
-  _('nope :(');
+  alert('nope :('); // Otherwise, alert "nope :("
 }

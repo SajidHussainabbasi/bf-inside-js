@@ -1,5 +1,3 @@
-// #todo
-
 'use strict';
 
 /* Iterating a User Number

@@ -1,5 +1,3 @@
-// #todo
-
 'use strict';
 
 /* for character of String
@@ -11,38 +9,43 @@
 
 let userInput = '';
 let userConfirmed = false;
-while (_) {
-  userInput = prompt('enter a word to filter:');
+while (!userConfirmed) {
+  userInput = prompt('Enter a word to filter:');
 
   if (userInput === '' || userInput === null) {
-    alert('nope, enter something');
+    alert('Nope, enter something');
     continue;
   }
 
   const whiteSpaceRegex = new RegExp('\\s', 'g');
-  if (whiteSpaceRegex._(userInput)) {
-    alert("words can't have white space");
+  if (whiteSpaceRegex.test(userInput)) {
+    alert("Words can't have white space");
     continue;
   }
 
   const confirmMessage =
-    'do you want to filter this word?\n\n' + '- "' + userInput + '"';
-  _ = confirm(confirmMessage);
+    'Do you want to filter this word?\n\n' + '- "' + userInput + '"';
+  userConfirmed = confirm(confirmMessage);
 }
 
-const removeVowels = confirm(`what would you like to remove from "${_}"?
-- ok: vowels
-- cancel: consonants
+const removeVowels = confirm(`What would you like to remove from "${userInput}"?
+- OK: Vowels
+- Cancel: Consonants
 `);
 
-const toRemove = removeVowels ? '_' : '_';
+const toRemove = removeVowels ? 'aeiou' : 'bcdfghjklmnpqrstvwxyz';
 
 let filteredInput = '';
 for (const character of userInput) {
   const lowerCaseCharacter = character.toLowerCase();
-  if (_) {
-    _;
+  if (toRemove.includes(lowerCaseCharacter)) {
+    continue; // Skip the character if it should be removed
   }
+  filteredInput += character;
+  if (confirm(confirmMessage)) {
+    break;  // Exits the loop
+  }
+
 }
 
 const finalMessage = `"${userInput}" -> "${filteredInput}"`;

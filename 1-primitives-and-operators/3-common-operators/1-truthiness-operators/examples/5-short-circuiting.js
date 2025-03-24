@@ -1,4 +1,3 @@
-// #todo
 
 /* Short-Circuiting
 

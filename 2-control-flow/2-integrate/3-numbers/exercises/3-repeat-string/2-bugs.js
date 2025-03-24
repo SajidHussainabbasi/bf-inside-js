@@ -1,5 +1,3 @@
-// #todo
-
 'use strict';
 
 /* look out for:
@@ -11,34 +9,41 @@
 
 */
 
-const userInput = '';
-const repetitions = NaN;
+let userInput = ''; // Changed const -> let
+let repetitions = NaN; // Changed const -> let
+
 while (true) {
-  userInput = prompt('enter a phrase to repeat:');
+  userInput = prompt('Enter a phrase to repeat:');
 
   if (userInput === '' || userInput === null) {
-    alert('nope, enter something');
+    alert('Nope, enter something');
     continue;
   }
 
-  const repetitionsInput = prompt('how many times do you want to repeat it?');
+  const repetitionsInput = prompt('How many times do you want to repeat it?');
 
   repetitions = Number(repetitionsInput);
 
-  if (Number.isNaN(repetitions)) {
-    alert('"' + repetitionsInput + '" is not a number');
+  if (
+    Number.isNaN(repetitions) ||
+    repetitions <= 0 ||
+    !Number.isInteger(repetitions)
+  ) {
+    alert(`"${repetitionsInput}" is not a valid positive whole number`);
     continue;
   }
 
-  const confirmMessage =
-    'is this correct?\n\n' + '- "' + userInput + '"\n' + '- ' + repetitions;
+  const confirmMessage = `Is this correct?\n\n- Phrase: "${userInput}"\n- Repetitions: ${repetitions}`;
   const confirmation = confirm(confirmMessage);
+
+  if (confirmation) break; // Exits the loop when user confirms
 }
 
 let repeatedInput = '';
 
-for (let i = 1; i < repetitions; i++) {
-  repeatedInput = userInput;
+for (let i = 0; i < repetitions; i++) {
+  // Fixed off-by-one error
+  repeatedInput += userInput; // Fixed concatenation issue
 }
 
-alert(`"userInput" -> "repeatedInput"`);
+alert(`"${userInput}" -> "${repeatedInput}"`); // Corrected message

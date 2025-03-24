@@ -1,5 +1,3 @@
-// #todo
-
 'use strict';
 
 /* look out for:
@@ -11,7 +9,7 @@
 */
 
 let userInput = '';
-let userConfirmed = false;
+let userConfirmed = true;
 while (userConfirmed) {
   userInput = prompt('enter your name:');
   console.log('userInput:', typeof userInput, userInput);

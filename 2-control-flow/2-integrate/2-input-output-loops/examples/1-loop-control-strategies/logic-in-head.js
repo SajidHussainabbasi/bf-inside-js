@@ -1,5 +1,3 @@
-// #todo
-
 'use strict';
 
 /* Logic in the Loop Head

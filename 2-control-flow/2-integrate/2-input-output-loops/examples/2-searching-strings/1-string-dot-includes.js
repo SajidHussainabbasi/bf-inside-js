@@ -1,5 +1,3 @@
-// #todo
-
 'use strict';
 
 /* 'string dot includes'.includes('dot')

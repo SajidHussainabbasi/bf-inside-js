@@ -1,5 +1,3 @@
-// #todo
-
 'use strict';
 
 /* for character of String
@@ -11,28 +9,42 @@
 
 let userInput = '';
 while (true) {
-  userInput = prompt('enter a word to filter:');
+  userInput = prompt('Enter a word to filter:');
 
   /* -- BEGIN: validate input -- */
+  if (userInput === null || userInput.trim() === '') {
+    alert('Nope, enter something');
+    continue;
+  }
 
+  if (/\s/.test(userInput)) {
+    alert("Words can't have white space");
+    continue;
+  }
   /* -- END: validate input -- */
+
+  break;  // Exit the loop once valid input is received
 }
 
-const removeVowels = confirm(`what would you like to remove from "${userInput}"?
-- ok: vowels
-- cancel: consonants
+const removeVowels = confirm(`What would you like to remove from "${userInput}"?
+- OK: Remove vowels
+- Cancel: Remove consonants
 `);
 
 let toRemove = '';
 if (removeVowels) {
-  toRemove = 'AEIOU';
+  toRemove = 'aeiouAEIOU'; // Include both lowercase & uppercase vowels
 } else {
-  toRemove = 'BCDFGHJKLMNPQRSTVWXYZ';
+  toRemove = 'bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ'; // Consonants
 }
 
 let filteredInput = '';
 /* -- BEGIN: filter input -- */
-
+for (const character of userInput) {
+  if (!toRemove.includes(character)) {
+    filteredInput += character;  // Add character if not in `toRemove`
+  }
+}
 /* -- END: filter input -- */
 
 const finalMessage = `"${userInput}" -> "${filteredInput}"`;

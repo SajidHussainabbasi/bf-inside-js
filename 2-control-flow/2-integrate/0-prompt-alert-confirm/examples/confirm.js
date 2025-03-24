@@ -1,5 +1,3 @@
-// #todo
-
 'use strict';
 
 // confirm returns either true or false

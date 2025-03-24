@@ -1,5 +1,3 @@
-// #todo
-
 'use strict';
 
 console.log('-- begin --');
@@ -8,8 +6,8 @@ console.log('-- begin --');
 
 let numberOfEggs = 0;
 
-while (numberOfEggs !== _) {
-  numberOfEggs = numberOfEggs + _;
+while (numberOfEggs !== 12) {
+  numberOfEggs = numberOfEggs + 1;
   console.log('numberOfEggs:', numberOfEggs);
 }
 

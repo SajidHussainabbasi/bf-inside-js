@@ -1,5 +1,3 @@
-// #todo
-
 'use strict';
 
 /* Prompt: Something or Nothing
